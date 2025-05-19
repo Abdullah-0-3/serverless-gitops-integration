@@ -1,3 +1,14 @@
-resources:
-  - openfaas-source.yaml
-  - openfaas-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: openfaas-funcs
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: ./clusters/my-cluster/openfaas-functions
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: openfaas-gitops
+  targetNamespace: openfaas-fn
+  timeout: 1m
