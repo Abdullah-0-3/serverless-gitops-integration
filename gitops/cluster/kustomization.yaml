@@ -1,14 +1,5 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: openfaas-funcs
-  namespace: flux-system
-spec:
-  interval: 1m
-  path: ./gitops/cluster/openfaas-functions
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: openfaas-gitops
-  targetNamespace: openfaas-fn
-  timeout: 1m
+resources:
+  - ./openfaas-functions
+images:
+  - name: muhammadabdullahabrar/openfaas-function
+    newTag: latest
