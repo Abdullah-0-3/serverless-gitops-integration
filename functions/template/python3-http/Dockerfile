@@ -33,7 +33,7 @@ USER app
 RUN mkdir -p function
 RUN touch ./function/__init__.py
 WORKDIR /home/app/function/
-COPY --chown=app:app function/requirements.txt  .
+COPY --chown=app:app function/requirements.txt	.
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # install function code
