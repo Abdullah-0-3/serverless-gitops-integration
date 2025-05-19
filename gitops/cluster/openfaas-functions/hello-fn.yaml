@@ -4,7 +4,6 @@ metadata:
   name: hello-fn
   namespace: openfaas-fn
 spec:
-  name: hello-fn
   image: muhammadabdullahabrar/openfaas-function:latest
   labels:
     app: hello-fn
@@ -12,7 +11,3 @@ spec:
     topic: http
   environment:
     write_debug: true
-  limits:
-    memory: 128Mi
-  requests:
-    memory: 64Mi
