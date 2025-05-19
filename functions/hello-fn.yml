@@ -7,4 +7,5 @@ functions:
   hello-fn:
     lang: python3
     handler: ./hello-fn/handler.py
+    dockerfile: Dockerfile
     image: muhammadabdullahabrar/hello-fn:lastest
